@@ -1,0 +1,119 @@
+/* Media query for all devices  */
+@media all and (max-width: 1120px) {
+    h1,h2{
+        font-size:2.8rem;
+    }
+}
+
+@media all and (max-width:1024px) {
+    h1, h2{
+        font-size: 2.5rem;
+    }
+}
+
+@media all and (max-width:992px) {
+
+    h1{
+        font-size: 2.3rem;
+    }
+    /* header */
+    header .container{
+        padding-bottom: 2rem;
+        position: relative;
+        & nav{
+            display: none;
+        }
+        & label {
+            display: inline-block;
+        }
+        & input[type=checkbox]:checked ~ nav{
+           display: inline-flex;
+           flex-direction: column;
+           position: absolute;
+           top: 100%;
+           left: 0;
+           gap: 2rem;
+           width: 100%;
+           padding: 1rem;
+           background: white;
+        }
+        & h1{
+            font-size: 2.1rem;
+        }
+        
+    }
+    
+    @media all and (min-width:680px) and (max-width:768px) {
+        .mission-section {
+            padding-top: 3rem;
+            font-size: 100%;
+        }
+    }
+}
+
+@media all and (max-width:768px) {
+    .container:not(header .container){
+        flex-direction: column;
+        & h1,
+        & h2{
+            font-size: 2rem;
+        }
+        /* all left and right sides */
+        .banner-left,
+        .banner-right,
+        .product-left,
+        .product-right{
+            width: 100%;
+            grid-auto-rows: auto;
+        }
+        .product-right{
+            grid-template-rows: 3;
+            grid-template-areas: 
+            'fullwidth'
+            'halfwidth1'
+            'halfwidth2';
+            margin-bottom: 4rem;
+        }
+
+        .footer-left,
+        .footer-right{
+            width: 100%;
+        }
+    }
+    .mission-section {
+        padding: 1rem;
+        &h2{
+            font-size: 1.8rem !important;
+        }
+    }
+    /* contact */
+    .contact-section .container{
+        padding: 1rem;
+        flex-direction: column;
+        justify-content: center;
+        .w50{
+            width: 100% !important;
+            &:last-child{
+                padding-top: 1rem;
+            }
+        }
+
+        & form{
+            & input:not([type=submit]),
+            & textarea{
+                width: 100%;
+            }
+        }
+        
+        .contact-right{
+            width: 100%;
+            & h2{
+                font-size: 1.2rem;
+                text-align: center;
+                padding-block: 0.5rem;
+                font-size: 2rem;
+                border-top: 2px solid;
+            }
+        }
+    }
+}

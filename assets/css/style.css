@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* default css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: #333;
+    font-family: "Inter", sans-serif;
+}
+
+@font-face {
+    font-family: 'Saffron';
+    src: url('https://uploads-ssl.webflow.com/65b20deb97aa12294b06dbd5/65b20f825d4b56ae022e285b_saffron-medium.css') format('undefined'), url('https://uploads-ssl.webflow.com/65b20deb97aa12294b06dbd5/65b20f82c636ce9b0909f808_saffron-medium.woff2') format('woff2'), url('https://uploads-ssl.webflow.com/65b20deb97aa12294b06dbd5/65b20f8291436a93f0954427_saffron-medium.eot') format('embedded-opentype'), url('https://uploads-ssl.webflow.com/65b20deb97aa12294b06dbd5/65b20f82cca0749a611ee7b4_saffron-medium.woff') format('woff'), url('https://uploads-ssl.webflow.com/65b20deb97aa12294b06dbd5/65b20f82b55171bc679099cc_saffron-medium.ttf') format('truetype'), url('https://uploads-ssl.webflow.com/65b20deb97aa12294b06dbd5/65b20f82ac2631bbdd840597_saffron-medium.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 2.8rem;
+}
+body{
+    font-size: 16px;
+}
+
+h1{
+    font-size: 3rem;
+    font-family: 'Saffron';
+}
+
+img{
+    max-width: 100%;
+}
+label{
+    display: none;
+}
+/* necessary classes */
+.container{
+    max-width: 81.25rem;
+    margin: auto;
+}
+.flex{
+    display: flex;
+}
+.w50{
+    width: 50%;
+}
+.w100{
+    width: 100%;
+}
+
+
+/* header part start */
+header,
+section{
+    padding-inline: 30px;
+}
+
+/* Header part start */
+header{
+    padding-top: 1rem;
+    .container{
+        display: flex;
+        justify-content: space-between;
+
+        /* logo */
+        & img{
+            max-width: 250px;
+        }
+
+        /* nav bar */
+        & nav{
+            display: flex; 
+            gap: 5.5rem;
+
+            /* manu items */
+            & a{
+                font-size: 1rem;
+                color: rgba(34,34,34);
+                font-weight: 600;
+                display: inline-block;
+
+                /* contact manu */
+                &:last-child{
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* Banner section start */
+
+.banner-section .banner-left,
+.banner-section .banner-right{
+    max-height: 39rem;
+}
+.banner-section .container{
+    gap: 3rem;
+
+    .banner-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .banner-right img{
+        border-radius: 2rem;
+    }
+}
+
+/* Msics's mission section start */
+
+.mission-section .container{
+    margin-block: 3rem;
+
+    .background{
+        height: 43.75rem;
+        background: url(../../images/mission.jpg) no-repeat center/cover;
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .msics-mission{
+        padding-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 32.5rem;
+
+        & h2{
+            text-align: center;
+            margin: 0.625rem 0 1.25rem 0;
+            font-size: 2.8rem;
+            font-family: 'Saffron';
+        }
+
+        & p{
+            text-align: center;
+        }
+    }
+}
+
+/* Product Section */
+.product-section .container{
+    display: flex;
+    gap: 3rem;
+    .product-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .product-right{
+        display: grid;
+        gap: 3rem;
+        grid-template-areas: 
+            'fullwidth fullwidth'
+            'halfwidth1 halfwidth2'
+        ;
+        grid-auto-rows: 300px auto;
+        & img{
+            border-radius: 2em;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            &:nth-child(1){
+                grid-area: fullwidth;
+            }
+            &:nth-child(2){
+                grid-area: halfwidth1;
+            }
+            &:nth-child(3){
+                grid-area: halfwidth2;
+            }
+        }
+    }
+}
+
+/* Our medical partners section  */
+.our-medical-partners .container{
+    margin-block: 3rem;
+    padding-block: 3rem;
+    border-block: 2px solid #eee;
+
+    & h1{
+        text-align: center;
+        font-size: 2.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .partners{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3.5em;
+        & img{
+            max-height: 5.6rem;
+            object-fit: cover;
+        }
+    }
+}
+
+/* contact section  */
+
+.contact-section .container{
+    margin-bottom: 5em;
+    max-height: 45.75rem;
+    background: url(../../images/contact-bg.jpg) no-repeat top center/cover;
+    position: relative;
+    padding: 3em;
+    border-radius: 2em;
+    &::after{
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0,0.4);
+        z-index: 2;
+        border-radius: 2em;
+    }
+    *{
+        z-index: 55;
+    }
+    h1, a{
+        color: white;
+    }
+    & h1{
+        padding-bottom: 2rem;
+    }
+    & form{
+        & input:not([type=submit]),
+        & textarea{
+            width: 90%;
+            height: 3.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            padding: 1em;
+            border-radius: 1rem;
+            border: none;
+            outline: none;
+        }
+        & textarea{
+            height: 8rem;
+            resize:vertical;
+        }
+        & input[type=submit]{
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: black;
+            border-radius: 1rem;
+            background: #c3caec;
+            border: none;
+        }
+    }
+
+    /* contact right */
+    .contact-right{
+        & h2{
+            font-family: 'Saffron';
+            padding-block: 2em;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+    }
+}
+
+/* Soriful Chalehin text animation part */
+.author {
+    font-family: "Saffron";
+    font-weight: 300;
+    animation: lights 5s 750ms linear infinite;
+  }
+@keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    } 
+}
+/* animation part end */
+
+
+/* footer section */
+.footer-section{
+    text-align: center;
+    padding: 3rem;
+    background-image: linear-gradient(to right, #c3c5e8, #c4d8f7 31%, #eafbe9 55%, #fef1d7 82%, #d9c7bf);
+
+}
+/**
+ * all code are writen by Soriful Chalehin. 
+ * facebook: https://facebook.com/Chalehin
+ * thank you.
+ */
+
+

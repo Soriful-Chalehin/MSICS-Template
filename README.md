@@ -7,8 +7,6 @@ Welcome to the MSICS HTML Template, a creation by Soriful Chalehin. This templat
 ## Features
 
 - **Responsive Design:** Ensure a seamless experience across a range of devices.
-- **Bootstrap Integration:** Utilize Bootstrap for a clean and structured layout.
-- **Font Awesome Icons:** Enhance your website with scalable vector icons from Font Awesome.
 - **Google Fonts:** Utilize beautifully crafted fonts from Google Fonts to enhance the visual appeal.
 
 ## Table of Contents
